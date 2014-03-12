@@ -36,10 +36,12 @@
         <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <!-- /Baidu CDN-->
 
-         <!-- SCROLL -->        
+        <!-- SCROLL -->        
         <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+        <!-- pace Loading -->
+        <script type="text/javascript" src="js/pace.min.js"></script>
 
-        <!-- 整体JS  -->
+        <!-- website script  -->
         <script src="js/scripts.js"></script>
 
         <!-- Include all Timeline plugins (below), or include individual files as needed -->
@@ -57,19 +59,21 @@
     </head>
     <body>
     	 <div class="wrapper">
-    		<div class="main">            
+    		<div id="main">            
             <!--整体构造-->
                 <!--HOME -->
-                <section class="page1">
-                    <div class="">
-                        <img src="img/logo.png" id="logo"/>
+                <section>
+                    <div class="page1">                        
+                        <img src="img/loading.png" class="loading"/>
+                        <div class="loading_back"></div>
                     </div>
                 </section>
                 <!--WORK -->
-                <section class="page2">
-                    <div id="timeline-embed"></div>
+                <section>
+                    <div class="page2">
+                        <div id="timeline-embed"></div>
+                    </div>
                 </section>
-
                 <!--ABOUT -->
                 <section class="page3">
                     <div class="container">
