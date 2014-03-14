@@ -15,11 +15,16 @@ $(document).ready(function() {
         responsiveFallback: 600 // 响应式宽度布局，小于此值不表示
     });
 
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    console.log(windowHeight);
+    console.log(windowWidth);
+
     //init timeline
     createStoryJS({
         type: 'timeline',
-        width: '800',
-        height: '600',
+        width: windowWidth,
+        height: windowHeight,
         source: timelineData,
         embed_id: 'timeline'
     });
