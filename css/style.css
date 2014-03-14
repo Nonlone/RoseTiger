@@ -5,8 +5,7 @@ html {
 
 body {
   background: #FFF;
-  padding: 0;
-  text-align: center;
+  padding: 0; 
   font-family: 'open sans';
   position: relative;
   margin: 0 auto;
@@ -22,29 +21,88 @@ section {
 }
 
 .loading{
-  float: left;
-  position: absolute;
+  margin: auto;
+  text-align: center;
   top: 0px;
-  left: 0px; 
-  z-index: 10;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  vertical-align: middle; 
 }
 
-.loading_back{
-  float: left;
-  background-color: #000000;
+.loadingTitle{
+  text-align: middle;
+}
+
+.loadingContent{  
   position: absolute;
+  margin: auto;
   top: 0px;
   left: 0px;
-  width: 47%;
-  height: 100%;
-  z-index: 5;
+  right: 0px;
+  bottom: 200px;
+  width: 540px;
+  height: 150px;
 }
+
+.loadingText{
+  font-size: 75px;
+  display: block;
+  position: absolute;
+  font-weight: bolder;
+}
+
+.textBlack{
+  color: #ffffff;
+  width:50px;
+}
+
+.textFront{
+  color: #000000;
+  transition: width 2s linear 0s;
+  overflow: hidden;
+  width:50px;
+}
+
+.textBlack.char1{
+  left:0px;
+}
+
+.textBlack.char2{
+ left:90px;
+}
+
+.textBlack.char3{
+  left:330px;
+}
+
+.textBlack.char4{
+  left:420px;
+}
+
+.textFront.char1{
+  left:0px;
+}
+
+.textFront.char2{
+  left:90px;
+}
+
+.textFront.char3{
+  left:330px;
+}
+
+.textFront.char4{
+  left:420px;
+}
+
 
 .page1{	
   width:100%;
   height: 100%;
   background-image: url("../img/bg.jpg");
   background-position: center;
+  padding: 50px;
 }
 
 .page2 {
