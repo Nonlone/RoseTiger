@@ -29,6 +29,7 @@ $(document).ready(function() {
         embed_id: 'timeline'
     });
 
+    /*
     //control-box
     $(".controller").hover(function() {
 
@@ -60,5 +61,6 @@ $(document).ready(function() {
         var text = $("#text").val();
         $(this).attr("href", "mailto:team@rose-tiger.com?subject=Re:标题&body=" + name + email + text);
     });
+    */
 
 });
