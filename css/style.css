@@ -199,24 +199,28 @@ section {
 
 
 #member-A{
-	background-image: url(file:///C|/Users/%E6%98%A0%E5%83%8F/Desktop/Rose-Tiger%20-%20new%20-1129/Rose-Tiger/img/test1.jpg);
+	background-image: url("../img/test1.jpg");
 	background-position: 0px 0px;
 }
 
 #member-B{
-	background-image: url(file:///C|/Users/%E6%98%A0%E5%83%8F/Desktop/Rose-Tiger%20-%20new%20-1129/Rose-Tiger/img/test2.jpg);
+	background-image: url("../img/test2.jpg");
 	background-position: 0px 0px;
 }
+
 #member-C{
-	background-image: url(file:///C|/Users/%E6%98%A0%E5%83%8F/Desktop/Rose-Tiger%20-%20new%20-1129/Rose-Tiger/img/test3.jpg);
+	background-image: url("../img/test3.jpg");
 	background-position: 0px 0px;
 }
+
 #member-D{
-	background-image: url(file:///C|/Users/%E6%98%A0%E5%83%8F/Desktop/Rose-Tiger%20-%20new%20-1129/Rose-Tiger/img/test1.jpg);
+	background-image: url("../img/test1.jpg");
 	background-position: 0px 0px;
 }
+
 #member-B5{
 }
+
 #member-B6{
 }
 
@@ -355,6 +359,7 @@ section {
 .btn-box p{
     margin: 0 10px 0;
 }
+
 .btn-text{
     font-family: 'GothamMedium', sans-serif;
     font-size: 12px;
@@ -364,11 +369,9 @@ section {
     padding: 10px 20px 10px 15px;
     color: #cfcfcf;
     white-space: nowrap;
-    background: transparent url(../img/btn-text.png) 100% 50% no-repeat;
+    background: transparent url("../img/btn-text.png") 100% 50% no-repeat;
     text-transform: none;
 }
-
-
 
 
 #text_home{
