@@ -1,6 +1,20 @@
 /**
   Index Script
 */
+
+function setProgress(precentage){
+    var charWidth = 75;
+    if(precentage>100){
+        return charWidth;
+    }
+    var width = precentage/100*charWidth;   
+    $(".textFront.char1").css("width",width+"px");
+    $(".textFront.char2").css("width",width+"px");
+    $(".textFront.char3").css("width",width+"px");
+    $(".textFront.char4").css("width",width+"px");
+    return width;
+}
+
 $(document).ready(function() {
     //render hook
 
@@ -15,19 +29,35 @@ $(document).ready(function() {
         responsiveFallback: 600 // 响应式宽度布局，小于此值不表示
     });
 
-    var windowHeight = $(window).height();
-    var windowWidth = $(window).width();
-    console.log(windowHeight);
-    console.log(windowWidth);
+    var head = document.getElementsByTagName("head").item(0);
+    var script = document.createElement("script");
+    script.setAttribute("type","text/javascript");
+    script.onload = function() {
 
-    //init timeline
-    createStoryJS({
-        type: 'timeline',
-        width: windowWidth,
-        height: windowHeight,
-        source: timelineData,
-        embed_id: 'timeline'
+        var windowHeight = $(window).height()+20;
+        var windowWidth = $(window).width();          
+        //init timeline
+        createStoryJS({
+            type: 'timeline',
+            width: windowWidth,
+            height: windowHeight,
+            source: timelineData,
+            embed_id: 'timeline'
+        });
+
+        var navNextLeft = $(".nav-next").css("left"); 
+        console.log(navNextLeft);
+    }
+    script.setAttribute("src","http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js");
+    head.appendChild(script);
+    
+
+    $(".collapse").on("show.bs.collapse",function(){
+        console.log("collapse show");
     });
+    // navNextLeft = parseInt(navNextLeft.substr(0,navNextLeft.indexOf("px")));
+    // navNextLeft -= 50;
+    // $(".nav-next").css("left",navNextLeft+"px");
 
     /*
     //control-box
