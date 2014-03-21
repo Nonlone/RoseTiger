@@ -2,16 +2,16 @@
   Index Script
 */
 
-function setProgress(precentage){
+function setProgress(precentage) {
     var charWidth = 75;
-    if(precentage>100){
+    if (precentage > 100) {
         return charWidth;
     }
-    var width = precentage/100*charWidth;   
-    $(".textFront.char1").css("width",width+"px");
-    $(".textFront.char2").css("width",width+"px");
-    $(".textFront.char3").css("width",width+"px");
-    $(".textFront.char4").css("width",width+"px");
+    var width = precentage / 100 * charWidth;
+    $(".textFront.char1").css("width", width + "px");
+    $(".textFront.char2").css("width", width + "px");
+    $(".textFront.char3").css("width", width + "px");
+    $(".textFront.char4").css("width", width + "px");
     return width;
 }
 
@@ -31,11 +31,11 @@ $(document).ready(function() {
 
     var head = document.getElementsByTagName("head").item(0);
     var script = document.createElement("script");
-    script.setAttribute("type","text/javascript");
+    script.setAttribute("type", "text/javascript");
     script.onload = function() {
 
-        var windowHeight = $(window).height()+20;
-        var windowWidth = $(window).width();          
+        var windowHeight = $(window).height() + 20;
+        var windowWidth = $(window).width();
         //init timeline
         createStoryJS({
             type: 'timeline',
@@ -45,19 +45,17 @@ $(document).ready(function() {
             embed_id: 'timeline'
         });
 
-        var navNextLeft = $(".nav-next").css("left"); 
+        var navNextLeft = $(".nav-next").css("left");
         console.log(navNextLeft);
     }
-    script.setAttribute("src","http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js");
+    script.setAttribute("src", "http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js");
     head.appendChild(script);
-    
 
-    $(".collapse").on("show.bs.collapse",function(){
+
+    $(".collapse").on("show.bs.collapse", function() {
         console.log("collapse show");
     });
-    // navNextLeft = parseInt(navNextLeft.substr(0,navNextLeft.indexOf("px")));
-    // navNextLeft -= 50;
-    // $(".nav-next").css("left",navNextLeft+"px");
+
 
     /*
     //control-box
