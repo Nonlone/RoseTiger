@@ -15,6 +15,23 @@ function setProgress(precentage) {
     return width;
 }
 
+var i=0;
+var count=0;
+function playBackground($ele,skipTime,step,begin,end,cssProperty){
+    if(skipTime>0&&!isNaN(skipTime)){
+        $ele.css(cssProperty,begin);
+        count = begin;
+        i=setInterval(function(){
+            count += step;
+            if(Math.abs(count)<Math.abs(end)){
+                $ele.css(cssProperty,count);
+            }else{
+                clearInterval(i);
+            }
+        },skipTime);
+    }
+}
+
 $(document).ready(function() {
     //render hook
 
@@ -28,6 +45,8 @@ $(document).ready(function() {
         loop: false, // 时候循环展示
         responsiveFallback: 600 // 响应式宽度布局，小于此值不表示
     });
+
+    $("#main").moveTo(3);
 
     var head = document.getElementsByTagName("head").item(0);
     var script = document.createElement("script");
@@ -45,15 +64,16 @@ $(document).ready(function() {
             embed_id: 'timeline'
         });
 
-        var navNextLeft = $(".nav-next").css("left");
-        console.log(navNextLeft);
+        //var navNextLeft = $(".nav-next").css("left");
+        //console.log(navNextLeft);
     }
     script.setAttribute("src", "http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js");
     head.appendChild(script);
 
 
     $(".collapse").on("show.bs.collapse", function() {
-        console.log("collapse show");
+        var $pic = $(this).parent().siblings(".team-head");
+        $pic.stop().animate({scrollTop:$pic.offset().top- 160},1200,'easeInOutCubic');
     });
 
 
