@@ -121,6 +121,34 @@ section {
 	background-color:#f2f2f2;
 	background-image:url("../img/paper_fibers.png");
 }
+
+
+@-webkit-keyframes playPic{
+  0%{
+    background-position-y:0px;
+  }
+  14%{
+    background-position-y:-145px;
+  }
+  28%{
+    background-position-y:-290px;
+  }
+  42%{
+    background-position-y:-435px;
+  }
+  56%{
+    background-position-y:-580px;
+  }
+  70%{
+    background-position-y:-725px;
+  }
+  84%{
+    background-position-y:-870px;
+  }
+  98%{
+    background-position-y:-1015px;
+  }  
+}
     
 .wrapper {
   height: 100% !important;
