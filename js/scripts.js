@@ -15,19 +15,32 @@ function setProgress(precentage) {
     return width;
 }
 
-var i=0;
-var count=0;
+//var playTimer=0;
+//var playCount=0;
 function playBackground($ele,skipTime,step,begin,end,cssProperty){
     if(skipTime>0&&!isNaN(skipTime)){
         $ele.css(cssProperty,begin);
-        count = begin;
-        i=setInterval(function(){
-            count += step;
-            if(Math.abs(count)<Math.abs(end)){
-                $ele.css(cssProperty,count);
-            }else{
-                clearInterval(i);
+        var playCount = begin;
+        var playTimer=setInterval(function(){
+            playCount += step;
+            if(step<0){
+                if(playCount>=end){
+                    $ele.css(cssProperty,playCount);
+                }else{
+                    clearInterval(playTimer);
+                    playTimer = 0;
+                    playCount = 0;
+                }
+            }else if(step>0){
+                if(playCount<=end){
+                    $ele.css(cssProperty,playCount);
+                }else{
+                    clearInterval(playTimer);
+                    playTimer = 0;
+                    playCount = 0;
+                }
             }
+            
         },skipTime);
     }
 }
@@ -70,10 +83,26 @@ $(document).ready(function() {
     script.setAttribute("src", "http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js");
     head.appendChild(script);
 
-
+    //collapse 展开执行
     $(".collapse").on("show.bs.collapse", function() {
-        var $pic = $(this).parent().siblings(".team-head");
-        $pic.stop().animate({scrollTop:$pic.offset().top- 160},1200,'easeInOutCubic');
+        var $member = $(this).parent().siblings(".team-head");
+        var step = -146;
+        var time = 100;//ms
+        var begin = 0;
+        var end = -876;
+        var cssProperty = "background-position-y";
+        playBackground($member,time,step,begin,end,cssProperty);
+    });
+
+    //collapse 关闭执行
+    $(".collapse").on("hide.bs.collapse",function(){
+        var $member = $(this).parent().siblings(".team-head");
+        var step = 146;
+        var time = 100;//ms
+         var begin = -876;
+        var end = 0;
+        var cssProperty = "background-position-y";
+        playBackground($member,time,step,begin,end,cssProperty);
     });
 
 
